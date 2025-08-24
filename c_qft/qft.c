@@ -10,7 +10,7 @@ void qft(int n, double complex *state) {
 
     for (int k = 0; k < dim; k++) {
         for (int j = 0; j < dim; j++) {
-            double angle = 2 * PI * j * k / dim;   // ✅ fixed
+            double angle = 2 * PI * j * k / dim;   
             out[k] += state[j] * cexp(I * angle) / sqrt(dim);
         }
     }
@@ -26,7 +26,7 @@ void inverse_qft(int n, double complex *state) {
 
     for (int k = 0; k < dim; k++) {
         for (int j = 0; j < dim; j++) {
-            double angle = -2 * PI * j * k / dim;   // ✅ fixed
+            double angle = -2 * PI * j * k / dim;
             out[k] += state[j] * cexp(I * angle) / sqrt(dim);
         }
     }
@@ -66,4 +66,5 @@ int main() {
 
     free(state);
     return 0;
+
 }
